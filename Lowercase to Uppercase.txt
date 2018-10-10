@@ -1,0 +1,18 @@
+题目描述:
+Description
+Convert a lowercase character to uppercase.
+Example
+a -> A, b -> B ...
+
+C++解法：
+class Solution {
+public:
+    /**
+     * @param character: a character
+     * @return: a character
+     */
+    char lowercaseToUppercase(char character) {
+        // write your code here
+        return character-('a'-'A');
+    }
+};
