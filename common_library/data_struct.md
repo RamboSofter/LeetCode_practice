@@ -102,7 +102,29 @@ deque(['c', 'b', 'a'])
 
 ### 优先队列
 
+queue.PriorityQueue
 
+queue.PriorityQueue这个优先级队列的实现在内部使用了heapq，时间和空间复杂度与heapq相同。
+区别在于PriorityQueue是同步的，提供了锁语义来支持多个并发的生产者和消费者。
+
+```python
+from queue import PriorityQueue
+
+q = PriorityQueue()
+
+q.put((2, 'code'))
+q.put((1, 'eat'))
+q.put((3, 'sleep'))
+
+while not q.empty():
+    next_item = q.get()
+    print(next_item)
+
+# 结果：
+#   (1, 'eat')
+#   (2, 'code')
+#   (3, 'sleep')
+```
 
 ## 栈
 
